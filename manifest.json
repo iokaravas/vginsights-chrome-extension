@@ -1,0 +1,37 @@
+{
+  "name": "VG Insights Tooltip",
+  "version": "1.0.0",
+  "description": "Quickly get sales info on a steam game via vginsights.com",
+  "manifest_version": 3,
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "192": "icons/icon-192.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://vginsights.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://store.steampowered.com/app/*"
+      ],
+      "js": [
+        "script.js"
+      ]
+    }
+  ],
+  "author": "Ioannis Karavas",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "VG Insights Sales Info"
+  }
+}
