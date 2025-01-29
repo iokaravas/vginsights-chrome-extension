@@ -35,6 +35,7 @@ Once the extension is installed:
     - **Units Sold**
     - **Gross Revenue**
     - **Net Revenue (-30%)**
+4. You can click this overlay to load the vginsights webpage of the game.
 
 ## Files Overview
 
