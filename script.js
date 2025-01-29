@@ -27,13 +27,20 @@ chrome.runtime.sendMessage({ action: 'fetchData', appId: appId }, (response) => 
     statsOverlay.style.color = '#fff';
     statsOverlay.style.padding = '10px';
     statsOverlay.style.borderRadius = '5px';
+
+    statsOverlay.style.cursor = 'pointer';
+
+    // Click handler to open VG Insights page
+    statsOverlay.addEventListener('click', () => {
+      window.open(`https://vginsights.com/game/${appId}`, '_blank');
+    });
+
     statsOverlay.innerHTML = `
       <strong>VG Insights Data</strong><br>
       Units Sold: ${formattedUnitsSold}<br>
       Gross Revenue: ${formattedRevenue}<br>
       Net Revenue (-30%): ${formattedNetRevenue}<br>
     `;
-
 
       document.body.appendChild(statsOverlay);
   } else {
